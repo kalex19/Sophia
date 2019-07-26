@@ -56,27 +56,27 @@ describe('actions', () => {
   });
 
   describe('deleteList', () => {
-    it('should have a type of DELETE_LIST with a payload of a list object', () => {
+    it('should have a type of DELETE_LIST with a payload of an id', () => {
       const expectedAction = {
         type: 'DELETE_LIST',
         payload: {
-          list: mockList
+          id: 1
         }
       };
-      const result = actions.deleteList(mockList);
+      const result = actions.deleteList(1);
       expect(result).toEqual(expectedAction);
     });
   });
 
   describe('deleteItem', () => {
-    it('should have a type of DELETE_ITEM with a payload of an item object', () => {
+    it('should have a type of DELETE_ITEM with a payload of an id', () => {
       const expectedAction = {
         type: 'DELETE_ITEM',
         payload: {
-          item: mockItem
+          id: 1
         }
       };
-      const result = actions.deleteList(mockItem);
+      const result = actions.deleteItem(1);
       expect(result).toEqual(expectedAction);
     });
   });
@@ -102,7 +102,7 @@ describe('actions', () => {
           error: 'There is an error'
         }
       };
-      const result = actions.deleteList(mockError);
+      const result = actions.hasError(mockError);
       expect(result).toEqual(expectedAction);
     });
   });

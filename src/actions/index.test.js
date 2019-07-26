@@ -60,10 +60,10 @@ describe('actions', () => {
       const expectedAction = {
         type: 'DELETE_LIST',
         payload: {
-          id: mockList.listId
+          id: 1
         }
       };
-      const result = actions.deleteList(mockList);
+      const result = actions.deleteList(1);
       expect(result).toEqual(expectedAction);
     });
   });
@@ -73,10 +73,10 @@ describe('actions', () => {
       const expectedAction = {
         type: 'DELETE_ITEM',
         payload: {
-          id: mockItem.itemId
+          id: 1
         }
       };
-      const result = actions.deleteList(mockItem);
+      const result = actions.deleteItem(1);
       expect(result).toEqual(expectedAction);
     });
   });
@@ -102,7 +102,7 @@ describe('actions', () => {
           error: 'There is an error'
         }
       };
-      const result = actions.deleteList(mockError);
+      const result = actions.hasError(mockError);
       expect(result).toEqual(expectedAction);
     });
   });

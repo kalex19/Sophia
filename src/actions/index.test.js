@@ -56,11 +56,11 @@ describe('actions', () => {
   });
 
   describe('deleteList', () => {
-    it('should have a type of DELETE_LIST with a payload of a list object', () => {
+    it('should have a type of DELETE_LIST with a payload of an id', () => {
       const expectedAction = {
         type: 'DELETE_LIST',
         payload: {
-          list: mockList
+          id: mockList.listId
         }
       };
       const result = actions.deleteList(mockList);
@@ -69,11 +69,11 @@ describe('actions', () => {
   });
 
   describe('deleteItem', () => {
-    it('should have a type of DELETE_ITEM with a payload of an item object', () => {
+    it('should have a type of DELETE_ITEM with a payload of an id', () => {
       const expectedAction = {
         type: 'DELETE_ITEM',
         payload: {
-          item: mockItem
+          id: mockItem.itemId
         }
       };
       const result = actions.deleteList(mockItem);

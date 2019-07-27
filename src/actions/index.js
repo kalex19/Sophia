@@ -1,14 +1,14 @@
-export const addList = (list) => ({
-type: "ADD_LIST",
+export const addAllLists = (lists) => ({
+type: "ADD_ALL_LISTS",
 payload: {
-  list
+  lists
 }
 });
 
-export const addItem = (item) => ({
-type: 'ADD_ITEM',
+export const addALLItems = (items) => ({
+type: 'ADD_ALL_ITEMS',
 payload: {
-  item
+  items
 }
 });
 

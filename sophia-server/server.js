@@ -1,6 +1,3 @@
-// import express from "express";
-// import cors from "cors"; may not be needed
-
 const express = require('express')
 const cors = require('cors')
 const server = express()
@@ -8,16 +5,10 @@ const port = 3000
 
 server.use(cors());
 server.use(express.json()); 
-
-server.get('/', (req, res) => res.send('yo!'));
-
-server.listen(port, () => console.log(`Example server listening on port ${port}!`));
-
 server.use(express.static('public'));
 
 server.locals.lists = [];
 server.locals.items = []; 
-
 
 //Routes
 
@@ -124,5 +115,9 @@ server.delete("/api/v1/items/:id", (req, res) => {
   server.locals.items.splice(itemIndex, 1);
   return res.sendStatus(204);
 });
+
+server.use(function (req, res, next) {
+  res.status(404).send("Sorry, can't find that!")
+})
 
 export default server;

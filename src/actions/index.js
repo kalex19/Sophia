@@ -5,6 +5,16 @@ payload: {
 }
 });
 
+//add list
+//add item
+//get all lists
+//get all items
+//get list
+//get item
+
+
+//test & change reducers
+
 export const addALLItems = (items) => ({
 type: 'ADD_ALL_ITEMS',
 payload: {

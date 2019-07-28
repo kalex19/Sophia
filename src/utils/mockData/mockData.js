@@ -54,3 +54,22 @@ complete_by_date: '7/14/19',
 export const mockLoading = false;
 
 export const mockError = "There is an error";
+
+export const mockGoodList = {
+  title: "groceries",
+};
+
+export const mockBadList = {
+  title: "",
+};
+
+export const mockGoodItem = {
+  task: "buy milk",
+};
+
+export const mockBadItem = {
+  task: "",
+};
+
+
+

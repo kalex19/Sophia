@@ -1,7 +1,7 @@
 import request from "supertest";
 import "@babel/polyfill";
-import server from "./server";
-import {mockGoodList, mockBadList, mockBadItem, mockGoodItem} from '../src/utils/mockData/mockData';
+import server from "../sophia-server/server";
+import {mockGoodList, mockBadList, mockBadItem, mockGoodItem} from './utils/mockData/mockData';
 
 describe("API", () => {
   let lists, items;
@@ -76,7 +76,7 @@ describe("API", () => {
       const response = await request(server)
         .post("/api/v1/lists")
         .send(mockBadList);
-      expect(response.body).toEqual("Please provide a title");
+      expect(response.body).toEqual("Please provide a list title");
       expect(server.locals.lists.length).toBe(2);
     });
     it("should return a status of 201", async () => {
@@ -108,7 +108,7 @@ describe("API", () => {
       expect(server.locals.lists).toEqual(lists);
       const response = await request(server)
         .put("/api/v1/lists/1")
-        .send(newlistInfo);
+        .send(mockGoodList);
       expect(server.locals.lists).toEqual(expected);
     });
     it("should return a status of 422 and error message if there is no title", async () => {
@@ -116,14 +116,14 @@ describe("API", () => {
         .put("/api/v1/lists/1")
         .send(mockBadList);
       expect(response.status).toBe(422);
-      expect(response.body).toBe("Please provide a title");
+      expect(response.body).toBe("Please provide a list title");
     });
     it("should return a status of 422 and error message if there are no tasks", async () => {
       const response = await request(server)
         .put("/api/v1/lists/1")
         .send(mockBadList);
       expect(response.status).toBe(422);
-      expect(response.body).toBe("Please provide a title");
+      expect(response.body).toBe("Please provide a list title");
     });
   });
   describe("DELETE /api/v1/lists/:id", () => {
@@ -207,12 +207,12 @@ describe("API", () => {
       const response = await request(server)
         .post("/api/v1/items")
         .send(mockGoodItem);
-      expect(response.body).toEqual({ id: 3, ...gooditem });
+      expect(response.body).toEqual({ id: 3, ...mockGoodItem });
       expect(server.locals.items.length).toEqual(3);
     });
   });
   describe("PUT /api/v1/items/:id", () => {
-    it("should return a status of 204 if card succesfully updated", async () => {
+    it("should return a status of 204 if item is succesfully updated", async () => {
       const response = await request(server)
         .put("/api/v1/items/1")
         .send(mockGoodItem);
@@ -231,14 +231,14 @@ describe("API", () => {
         .put("/api/v1/items/1")
         .send(mockBadItem);
       expect(response.status).toBe(422);
-      expect(response.body).toBe("Please provide a task");
+      expect(response.body).toBe("Please provide an item task");
     });
     it("should return a status of 422 and error message if there are no tasks", async () => {
       const response = await request(server)
         .put("/api/v1/items/1")
-        .send(mockBadTask);
+        .send(mockBadItem);
       expect(response.status).toBe(422);
-      expect(response.body).toBe("Please provide a task");
+      expect(response.body).toBe("Please provide an item task");
     });
   });
   describe("DELETE /api/v1/items/:id", () => {
@@ -262,5 +262,15 @@ describe("API", () => {
       expect(response.body).toBe("Item does not exist");
     });
   });
+  describe("404 error", () => {
+    it('should return a 404 if the route does not exist', async () => {
+      const response = await request(server)
+      expect(response.status).toBe(404);
+    });
+    it('should return a message if the route does not exist', async () => {
+      const response = await request(server)
+      expect(response.body).toBe("Sorry, can't find that!")
+    });
+  })
 });
 

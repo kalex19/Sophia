@@ -5,22 +5,26 @@ payload: {
 }
 });
 
-//add list
-//add item
-//get all lists
-//get all items
-//get list
-//get item
-
-
-//test & change reducers
-
-export const addALLItems = (items) => ({
+export const addAllItems = (items) => ({
 type: 'ADD_ALL_ITEMS',
 payload: {
   items
 }
 });
+
+export const addList = (list) => ({
+  type: "ADD_LIST",
+  payload: {
+    list
+  }
+  });
+  
+  export const addItem = (item) => ({
+  type: 'ADD_ITEM',
+  payload: {
+    item
+  }
+  });
 
 export const updateList = (list) => ({
 type: 'UPDATE_LIST',

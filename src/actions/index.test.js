@@ -29,6 +29,32 @@ describe('actions', () => {
     });
   });
 
+  describe('addList', () => {
+    it('should have a type of ADD_LIST with a payload of a list object', () => {
+      const expectedAction = {
+        type: 'ADD_LIST',
+        payload: {
+          list: mockList
+        }
+      };
+      const result = actions.addList(mockList);
+      expect(result).toEqual(expectedAction);
+    });
+  });
+
+  describe('addItem', () => {
+    it('should have a type of ADD_ITEM with a payload of an item object', () => {
+      const expectedAction = {
+        type: 'ADD_ITEM',
+        payload: {
+          item: mockItem
+        }
+      };
+      const result = actions.addItem(mockItem);
+      expect(result).toEqual(expectedAction);
+    });
+  });
+
   describe('updateList', () => {
     it('should have a type of UPDATE_LIST with a payload of a list object', () => {
       const expectedAction = {

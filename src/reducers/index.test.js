@@ -23,6 +23,16 @@ describe('reducers', () => {
         });
         expect(result).toEqual(expected);
     });
+    it('should handle ADD_ITEM', () => {
+      const expected = mockItem;
+      const result = itemReducer(mockItem,{
+        type: "ADD_ITEM",
+        payload: {
+          item:mockItem
+        }
+      });
+      expect(result).toEqual(expected);
+  });
     it('should handle UPDATE_ITEM', () => {
       const expected = mockItem;
         const result = itemReducer(mockItem,{
@@ -56,6 +66,16 @@ describe('reducers', () => {
         type: "ADD_ALL_LISTS",
         payload: {
           lists:mockLists
+        }
+      });
+			expect(result).toEqual(expected);
+    });
+    it('should handle ADD_LIST', () => {
+      const expected = mockList;
+			const result = listReducer(mockList, {
+        type: "ADD_LIST",
+        payload: {
+          list:mockList
         }
       });
 			expect(result).toEqual(expected);

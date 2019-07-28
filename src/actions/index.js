@@ -1,16 +1,30 @@
-export const addList = (list) => ({
-type: "ADD_LIST",
+export const addAllLists = (lists) => ({
+type: "ADD_ALL_LISTS",
 payload: {
-  list
+  lists
 }
 });
 
-export const addItem = (item) => ({
-type: 'ADD_ITEM',
+export const addAllItems = (items) => ({
+type: 'ADD_ALL_ITEMS',
 payload: {
-  item
+  items
 }
 });
+
+export const addList = (list) => ({
+  type: "ADD_LIST",
+  payload: {
+    list
+  }
+  });
+  
+  export const addItem = (item) => ({
+  type: 'ADD_ITEM',
+  payload: {
+    item
+  }
+  });
 
 export const updateList = (list) => ({
 type: 'UPDATE_LIST',

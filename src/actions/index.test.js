@@ -1,7 +1,33 @@
 import * as actions from './index';
-import { mockList, mockItem, mockLoading, mockError } from '../utils/mockData/mockData';
+import { mockLists, mockList, mockItems, mockItem, mockLoading, mockError } from '../utils/mockData/mockData';
 
 describe('actions', () => {
+
+  describe('addAllLists', () => {
+    it('should have a type of ADD_ALL_LISTS with a payload of a list array', () => {
+      const expectedAction = {
+        type: 'ADD_ALL_LISTS',
+        payload: {
+          lists: mockLists
+        }
+      };
+      const result = actions.addAllLists(mockLists);
+      expect(result).toEqual(expectedAction);
+    });
+  });
+
+  describe('addAllItems', () => {
+    it('should have a type of ADD_ALL_ITEMS with a payload of an item array', () => {
+      const expectedAction = {
+        type: 'ADD_ALL_ITEMS',
+        payload: {
+          items: mockItems
+        }
+      };
+      const result = actions.addAllItems(mockItems);
+      expect(result).toEqual(expectedAction);
+    });
+  });
 
   describe('addList', () => {
     it('should have a type of ADD_LIST with a payload of a list object', () => {

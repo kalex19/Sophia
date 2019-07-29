@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import List from '../../containers/Lists/List';
 import { connect } from 'react-redux';
 import { getItems, getLists } from '../../utils/apicalls';
 import * as actions from '../../actions';
+import './ListContainer.css';
 
-export class App extends Component {
-	async componentDidMount () {
+export class ListContainer extends Component {
+
+  async componentDidMount () {
     this.fetchItems()
     this.fetchLists()
   }
@@ -28,21 +31,29 @@ export class App extends Component {
 			this.props.hasError(err.message);
 		}
 	};
-
-	render () {
-		return <div />;
-	}
+  render() {
+    const lists = this.props.lists.map(list => {
+      return (
+        <List list={list}/>
+      )
+    })
+    return (
+      <div className="list-container">
+        {lists}
+      </div>
+    )
+  }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   items: state.items,
   lists: state.lists
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addAllItems: items => dispatch(actions.addAllItems(items)),
   addAllLists: lists => dispatch(actions.addAllLists(lists)),
 	hasError: message => dispatch(actions.hasError(message))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);

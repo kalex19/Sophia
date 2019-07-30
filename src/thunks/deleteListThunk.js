@@ -2,21 +2,15 @@ import { fetchData } from '../utils/fetchData';
 import { deleteList, hasError } from '../actions';
 
 
-export const deleteList = id => {
+export const deleteListThunk = id => {
   return async dispatch => {
     try {
-      const url = `http://localhost:3001/api/v1/lists/${id}`
-      dispatch(deleteList(id));
+      const url = `http://localhost:3002/api/v1/lists/${id}`
       const options = {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id
-        })
+        method: 'DELETE'
       }
-      await fetchData(url, options)
+      await fetch(url, options)
+      dispatch(deleteList(id));
     } catch (error) {
       dispatch(hasError(error))
     }

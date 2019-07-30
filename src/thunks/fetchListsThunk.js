@@ -1,16 +1,19 @@
 import { fetchData } from '../utils/fetchData';
-
 import { hasError, addAllLists } from '../actions';
 
-export const fetchLists = url => {
+export const fetchLists = () => {
+  const url = 'http://localhost:3002/api/v1/lists'
   return async (dispatch) => {
     try {
-      const data = await fetchData(url);
-      const lists = data
+      const response = await fetchData(url);
+      const lists = await response.json()
+      console.log(lists)
       dispatch(addAllLists(lists));
-      return lists
+      return Promise.all(lists);
     } catch (error) {
       dispatch(hasError(error))
     }
   }
 }
+
+//not currently in use

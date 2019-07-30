@@ -1,20 +1,16 @@
-import { fetchData } from '../fetchData';
-import {updateList} from '../actions';
+import { fetchData } from '../utils/fetchData';
+import {updateList, hasError} from '../actions';
 
-export const updateList = list => {
+export const updateListThunk = list => {
   return async dispatch => {
     try {
-      const { title, id } = list;
-      const url = 'http://localhost:3001/api/v1/lists/:id';
+      const url = `http://localhost:3002/api/v1/lists/${list.id}`;
       const options = {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          title,
-          id
-        })
+        body: JSON.stringify(list)
       }
       const result = await fetchData(url, options)
       dispatch(updateList(result))

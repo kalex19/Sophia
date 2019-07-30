@@ -2,21 +2,15 @@ import { fetchData } from '../utils/fetchData';
 import { deleteItem, hasError } from '../actions';
 
 
-export const deleteItem = id => {
+export const deleteItemThunk = id => {
   return async dispatch => {
     try {
-      const url = `http://localhost:3001/api/v1/items/${id}`
-      dispatch(deleteItem(id));
+      const url = `http://localhost:3002/api/v1/items/${id}`
       const options = {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id
-        })
+        method: 'DELETE'
       }
-      await fetchData(url, options)
+      await fetch(url, options)
+      dispatch(deleteItem(id));
     } catch (error) {
       dispatch(hasError(error))
     }

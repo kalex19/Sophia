@@ -71,5 +71,11 @@ export const mockBadItem = {
   task: "",
 };
 
+export const mockState = {
+  items: mockItems,
+  lists: mockLists
+}
+
+
 
 

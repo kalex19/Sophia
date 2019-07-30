@@ -1,0 +1,56 @@
+.list-body {
+margin: 5%;
+background-color: white;
+width: 25%;
+min-height: 100px;
+border-radius: 2%;
+padding: 0 1%;
+}
+
+.list-title{
+  color: black;
+  font-size: 2em;
+  font-family: 'Courier New', Courier, monospace;
+  border: 0 solid;
+  outline: none;
+  text-align: center;
+}
+
+.item-task-bullet{
+  list-style-type: none;
+  background-color: rgb(14, 107, 14);
+  margin: 0;
+}
+
+.item-task {
+  border: 0 solid;
+  font-size: 1.5em;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 3%;
+  outline: none;
+}
+
+.delete-item-btn {
+  margin: 2%;
+  font-size: 1em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.delete-list-btn,
+.home-btn {
+  margin: 2% 10%;
+  font-size: 1.2em;
+  font-family: 'Courier New', Courier, monospace;
+  background-color:white;
+  color: rgb(14, 107, 14);
+  border: 1px solid rgb(14, 107, 14);
+}
+
+.delete-list-btn:hover,
+.home-btn:hover {
+background-color: rgb(14, 107, 14);
+color: white;
+}
+
+
+

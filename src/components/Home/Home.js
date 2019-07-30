@@ -3,7 +3,7 @@ import ListContainer from '../../containers/ListContainer/ListContainer';
 import Form from '../../containers/Form/Form';
 import './Home.css';
       
-export const Home = () => {
+ const Home = () => {
     return (
       <div>
         <h1 className="app-title">SOPHIA</h1>

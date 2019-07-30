@@ -60,7 +60,7 @@ export class List extends React.Component {
 	}
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
 	deleteItem: id => dispatch(deleteItemThunk(id)),
 	deleteList: id => dispatch(deleteListThunk(id)),
 	updateItem: item => dispatch(updateItemThunk(item)),

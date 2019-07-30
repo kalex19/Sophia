@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import * as actions from "../../actions";
+import PropTypes from 'prop-types';
 
 export class Form extends Component {
   constructor() {
@@ -11,14 +12,6 @@ export class Form extends Component {
       selectedList: 0
     }
   }
-
-  //create a new list
-  //input title
-  //create id - express
-  //select a list to add to & create a new item
-//create title task
-//grocery task 
-//submit
 
 handleSubmit = (e) => {
   e.preventDefault();
@@ -79,13 +72,19 @@ this.setState({
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   lists: state.lists
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(actions.addItem(item)),
   addList: list => dispatch(actions.addList(list)),
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Form)
+
+Form.propTypes = {
+  lists: PropTypes.array,
+  addItem: PropTypes.func,
+  addList: PropTypes.func
+}

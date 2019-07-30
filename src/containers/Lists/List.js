@@ -43,8 +43,11 @@ export class List extends React.Component {
 					})}
 				</ul>
 				<Link to={`/`}>
-
-				<button onClick={() => this.props.deleteList(this.props.list.id)} className="delete-list-btn">
+				<button onClick={() => {
+					this.props.deleteList(this.props.list.id)
+					this.props.items.forEach(item => this.props.deleteItem(item.id))
+				}}
+				 className="delete-list-btn">
 					Delete List
 				</button>
 				</Link>

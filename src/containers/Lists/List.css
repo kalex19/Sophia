@@ -27,6 +27,7 @@ padding: 0 1%;
   font-size: 1.5em;
   font-family: 'Courier New', Courier, monospace;
   margin: 3%;
+  outline: none;
 }
 
 .delete-item-btn {

@@ -38,16 +38,15 @@ export class ListContainer extends Component {
 			}
 		}
 	};
-	
+
 	render () {
 		const lists = this.props.lists.map(list => {
 			const items = this.props.items.filter(item => item.list_id == list.id);
 			return (
-				<Link to={`/lists/${list.id}`}>
+				<Link to={`/lists/${list.id}`} style={{textDecoration:'none'}}>
 					<div>
-						<h3>{list.title}</h3>
+						<h3 className="list-link">{list.title}</h3>
 					</div>
-					{/* // <List list={list} items={items} /> */}
 				</Link>
 			);
 		});

@@ -21,6 +21,10 @@ handleSubmit = (e) => {
   } else {
     this.createItem(this.state.selectedList)
   }
+  this.setState({
+    title: '',
+    task: ''
+  })
 }
 
 createList = async () => {

@@ -20,6 +20,38 @@ export class Form extends Component {
 //grocery task 
 //submit
 
+handleSubmit = (e) => {
+  e.preventDefault();
+  if(!parseInt(this.state.selectedList)){
+    this.createList()
+  }
+    this.createItem()
+}
+
+createList = async () => {
+  const response = fetch('http://localhost:3002/api/v1/lists' ,{
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      title: this.state.title,
+      })
+  })
+  console.log(response)
+}
+
+createItem = async () => {
+  const response = await fetch('http://localhost:3002/api/v1/items',{
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      list_id: parseInt(this.state.selectedList),
+      task: this.state.task,
+      })
+  })
+  const data = await response.json();
+  console.log(data);
+}
+
 handleChange = (e) => {
 this.setState({
   [e.target.name]: e.target.value
@@ -38,6 +70,7 @@ this.setState({
      {this.state.selectedList == 0 && 
         <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>}
         <input type="text" name="task" value={this.state.task} onChange={this.handleChange}/>
+        <input type="submit" value="Add Task"/>
      </form>
     )
   }

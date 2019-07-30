@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import * as actions from "../../actions";
 import PropTypes from 'prop-types';
+import './Form.css';
 
 export class Form extends Component {
   constructor() {
@@ -56,17 +57,17 @@ this.setState({
 
   render() {
     return (
-     <form onSubmit={this.handleSubmit}>
-     <select name="selectedList" onChange={this.handleChange}>
+     <form onSubmit={this.handleSubmit}className="form">
+     <select name="selectedList" onChange={this.handleChange} className="drop-down">
        <option value="0">Create New List</option>
       {this.props.lists.map(list => {
        return <option value={list.id}>{list.title}</option>
       })}
      </select>
      {this.state.selectedList == 0 && 
-        <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>}
-        <input type="text" name="task" value={this.state.task} onChange={this.handleChange}/>
-        <input type="submit" value="Add Task"/>
+        <input type="text" name="title" value={this.state.title} onChange={this.handleChange} className="title-input"/>}
+        <input type="text" name="task" value={this.state.task} onChange={this.handleChange}  className="task-input"/>
+        <input type="submit" value="Add Task" className="add-task-btn"/>
      </form>
     )
   }

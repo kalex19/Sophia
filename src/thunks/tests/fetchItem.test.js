@@ -1,4 +1,4 @@
-import { adddItem } from '../fetchItemThunk';
+import { addItem } from '../fetchItemThunk';
 import { hasError, addAllLists } from '../../actions';
 import {mockLists} from '../../utils/mockData/mockData';
 

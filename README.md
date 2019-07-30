@@ -44,16 +44,19 @@ This project is a to-do app for caregivers and seniors. An an MVP, the user is a
 
 ## Project Successes
 
-This project was developed over several days using genuine TDD. 
+This project was developed over several days using genuine TDD. This process was exciting as real TDD rarely happens to do the difficulty of testing front-end applications. The developer also took on the challenge of building out a backend server, which proved to be successful.
 
 ## Project Challenges
 
-
+ Fetching data was often a challenge and many new error messages arose, testing the developer's ability to de-bug problems. The development timeline for this project was shorter due to the test driven development. Often applications are built and then test if there is time. in this case, the tests were written, failed, the app was built, and then the code was tested and revised to match the tests. Time management was key in the completion of this project. 
 
 
 ## Project Extensions/Issues
 
-* 
+* User can create an account/log in
+* User can share lists/items with other users
+* User can star important items
+* User can add a due date on items
 
 ## Project Tech Emphasis
 
@@ -100,11 +103,6 @@ This project was developed over several days using genuine TDD.
 ### 404 Page
 
 ![404 Page](./src/assets/404-Page.png)
-
-
-### Video
-
-![Video](./src/assets/video-sophia.mov)
 
 
 ## Developer

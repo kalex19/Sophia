@@ -12,6 +12,7 @@ export const itemReducer = (state = [], action) => {
       }
       return state
     case 'DELETE_ITEM':
+    console.log(payload.id)
       return state.filter(item => item.id !== payload.id);
     default:
       return state

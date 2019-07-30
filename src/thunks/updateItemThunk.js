@@ -13,7 +13,6 @@ export const updateItemThunk = item => {
         body: JSON.stringify(item)
       }
       const result = await fetchData(url, options)
-      console.log(result)
       dispatch(updateItem(result))
     } catch (error) {
       dispatch(hasError(error));

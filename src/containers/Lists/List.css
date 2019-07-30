@@ -35,8 +35,9 @@ padding: 0 1%;
   font-family: 'Courier New', Courier, monospace;
 }
 
-.delete-list-btn {
-  margin: 2%;
+.delete-list-btn,
+.home-btn {
+  margin: 2% 10%;
   font-size: 1.2em;
   font-family: 'Courier New', Courier, monospace;
   background-color:white;
@@ -44,7 +45,8 @@ padding: 0 1%;
   border: 1px solid rgb(14, 107, 14);
 }
 
-.delete-list-btn:hover {
+.delete-list-btn:hover,
+.home-btn:hover {
 background-color: rgb(14, 107, 14);
 color: white;
 }

@@ -12,17 +12,16 @@ export const App = (props) => {
 		<div>
       <Switch>
 			<Route exact path="/" component={Home} />
-			{/* <Route path="/lists" component={ListContainer}/>
+			{/* <Route path="/lists" component={ListContainer}/> */}
 			<Route
 				path="/lists/:id"
 				render={({ match }) => {
 					const id = match.params.id;
           const list = props.lists.find(l => l.id == id);
-          console.log(list)
 					const items = props.items.filter(i => i.list_id == id);
 					return <List list={list} items={items} />;
 				}}
-			/> */}
+			/>
 			<Route component={Error}/>
       </Switch>
 		</div>

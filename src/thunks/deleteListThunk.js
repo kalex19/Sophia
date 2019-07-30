@@ -9,7 +9,7 @@ export const deleteListThunk = id => {
       const options = {
         method: 'DELETE'
       }
-      await fetchData(url, options)
+      await fetch(url, options)
       dispatch(deleteList(id));
     } catch (error) {
       dispatch(hasError(error))

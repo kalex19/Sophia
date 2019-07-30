@@ -5,6 +5,7 @@ import { getItems, getLists } from '../../utils/apicalls';
 import * as actions from '../../actions';
 import './ListContainer.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class ListContainer extends Component {
 	async componentDidMount () {
@@ -13,30 +14,40 @@ export class ListContainer extends Component {
 	}
 
 	fetchItems = async () => {
-		try {
-			const items = await getItems();
-			this.props.addAllItems(items);
-			this.props.hasError('');
-		} catch (err) {
-			this.props.hasError(err.message);
+		const { items } = this.props;
+		if (!items.length) {
+			try {
+				const items = await getItems();
+				this.props.addAllItems(items);
+				this.props.hasError('');
+			} catch (err) {
+				this.props.hasError(err.message);
+			}
 		}
 	};
 
 	fetchLists = async () => {
-		try {
-			const lists = await getLists();
-			this.props.addAllLists(lists);
-			this.props.hasError('');
-		} catch (err) {
-			this.props.hasError(err.message);
+		const { lists } = this.props;
+		if (!lists.length) {
+			try {
+				const lists = await getLists();
+				this.props.addAllLists(lists);
+				this.props.hasError('');
+			} catch (err) {
+				this.props.hasError(err.message);
+			}
 		}
 	};
+	
 	render () {
 		const lists = this.props.lists.map(list => {
 			const items = this.props.items.filter(item => item.list_id == list.id);
 			return (
 				<Link to={`/lists/${list.id}`}>
-					<List list={list} items={items} />
+					<div>
+						<h3>{list.title}</h3>
+					</div>
+					{/* // <List list={list} items={items} /> */}
 				</Link>
 			);
 		});
@@ -56,3 +67,11 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);
+
+ListContainer.propTypes = {
+	items: PropTypes.array,
+	lists: PropTypes.array,
+	addAllItems: PropTypes.func,
+	addAllLists: PropTypes.func,
+	hasError: PropTypes.func
+};

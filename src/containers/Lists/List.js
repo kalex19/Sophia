@@ -5,7 +5,8 @@ import { updateItemThunk } from '../../thunks/updateItemThunk';
 import { updateListThunk } from '../../thunks/updateListThunk';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './List.css'
+import { Link } from 'react-router-dom';
+import './List.css';
 
 export class List extends React.Component {
 	render () {
@@ -18,12 +19,13 @@ export class List extends React.Component {
 						this.forceUpdate();
 					}}
 					onBlur={() => this.props.updateList(this.props.list)}
-				className="list-title"/>
+					className="list-title"
+				/>
 				<ul>
 					{this.props.items.map(item => {
 						return (
 							<li className="item-task-bullet">
-								<input type="checkbox"/>
+								<input type="checkbox" />
 								<input
 									value={item.task}
 									onChange={e => {
@@ -31,7 +33,8 @@ export class List extends React.Component {
 										this.forceUpdate();
 									}}
 									onBlur={() => this.props.updateItem(item)}
-							className="item-task"	/>
+									className="item-task"
+								/>
 								<button name="deleteBtn" onClick={() => this.props.deleteItem(item.id)} className="delete-item-btn">
 									X
 								</button>
@@ -39,7 +42,15 @@ export class List extends React.Component {
 						);
 					})}
 				</ul>
-				<button onClick={() => this.props.deleteList(this.props.id)} className="delete-list-btn"> Delete List </button>
+				<Link to={`/`}>
+
+				<button onClick={() => this.props.deleteList(this.props.list.id)} className="delete-list-btn">
+					Delete List
+				</button>
+				</Link>
+				<Link to={`/`}>
+					<button className="home-btn">Go Home</button>
+				</Link>
 			</article>
 		);
 	}

@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react';
+import './Error.css';
+import { Link } from 'react-router-dom';
 
-export class Error extends Component {
-  render() {
+export const Error = () => {
     return (
-      <div>
-        <p>Error</p>
+      <div className="error-container">
+        <h2 className="error-message">Page Not Found</h2>
+        <Link to={'/'}>
+        <button className="home-button">Return Home</button>
+				</Link>
       </div>
     )
-  }
-}
+  };
 
-export default Error
+export default Error;

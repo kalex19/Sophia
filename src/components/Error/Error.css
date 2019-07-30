@@ -1,0 +1,24 @@
+.error-container {
+  margin: 5% 35%;
+}
+
+.error-message {
+  color: white;
+  font-size: 4em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.home-button {
+  height: 60px;
+  width: 220px;
+  color: darkgray;
+  font-size: 2em;
+  margin: 0 15%;
+  box-shadow: 5px 5px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.home-button:hover {
+  color: rgb(14, 107, 14);
+}

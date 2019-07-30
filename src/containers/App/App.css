@@ -4,9 +4,3 @@ body {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/logan-nolin-EvceCyopkKI-unsplash.jpg');
 }
 
-.app-title {
-  color: rgb(170, 165, 165);
-  font-size: 4em;
-  font-family: cursive;
-  margin: 0 40%;
-}

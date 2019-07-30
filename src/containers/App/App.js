@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Error from '../Error/Error';
 import Home from '../Home/Home';
 import List from '../../containers/Lists/List'
 import { connect } from 'react-redux';
 
 export const App = (props) => {
-  console.log(props)
 	return (
 		<div>
+      <Switch>
 			<Route exact path="/" component={Home} />
+			<Route path="/lists" component={ListContainer}/>
 			<Route
 				path="/lists/:id"
 				render={({ match }) => {
@@ -21,7 +22,8 @@ export const App = (props) => {
 					return <List list={list} items={items} />;
 				}}
 			/>
-			<Route component={Error} />
+			<Route component={Error}/>
+      </Switch>
 		</div>
 	);
 };

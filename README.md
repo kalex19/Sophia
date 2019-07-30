@@ -41,15 +41,15 @@ Clone down [this repo]('https://github.com/kalex19/Sophia-server'). Start the se
 
 ## Description
 
-This project is a to-do app for caregivers and seniors. An an MVP, the user is able to create a to-do list and add items to the to-do list or delete items or lists once completed. Once fully developed, the user will be able to create an acount, log in, create lists and items, complete lists and items, and star lists and items by increasing the importance of the list/item or by adding a due date to the list/item for when the to-do needs to be done.
+This project is a to-do app for caregivers and seniors. An an MVP, the user is able to create a to-do list and add items to the to-do list or delete items or lists once completed. Once fully developed, the user will be able to create an acount, log in, create lists and items, complete lists and items, and star lists and items by increasing the importance of the list/item or by adding a due date to the list/item for when the to-do needs to be done and then share those lists with another user. This allows the caregiver and the senior to both have accounts - the senior creates their to-dos and the caregiver is sure to get them done.
 
 ## Project Successes
 
-This project required 1-2 api calls, however the modular code was build to run up to 20 different fetch calls to the moviedb to grab different sets of movie data. This increases the pleasure felt during the user experience as the user can select from a variety of movie genres. The developers implemented thunks for the first time and over half of the app has passing test coverage.
+This project was developed over several days using genuine TDD. 
 
 ## Project Challenges
 
-Writing modular code required careful planning and strategic architecture. Creating a flat redux store also proved to be a challenge. Working through merge conflicts was tedious mostly due to text editor formatting differences. The app stlying was up to the developers whereas other projects have had a style comp, so extra effort went into creating a cleanly styled app. Lastly, keeping track of local state vs the store was a conceptual hurdle.
+
 
 
 ## Project Extensions/Issues
@@ -104,9 +104,9 @@ Writing modular code required careful planning and strategic architecture. Creat
 
 
 
-### GIFS
+### Video
 
-![GIF](./src/images/betterflix-categories.gif)
+![Video](./src/assets/video-sophia.mov)
 
 
 ## Developer

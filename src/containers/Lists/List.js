@@ -21,12 +21,13 @@ export class List extends React.Component {
 					onBlur={() => this.props.updateList(this.props.list)}
 					className="list-title"
 				/>
-				<ul>
+				{this.props.items.length == 0 && <p className="no-items-text">No items available</p>}
+				{!this.props.items.length == 0 &&<ul>
 					{this.props.items.map(item => {
 						return (
 							<li className="item-task-bullet">
 								<input type="checkbox" />
-								<input
+							 <input
 									value={item.task}
 									onChange={e => {
 										item.task = e.target.value;
@@ -41,7 +42,7 @@ export class List extends React.Component {
 							</li>
 						);
 					})}
-				</ul>
+				</ul>}
 				<Link to={`/`}>
 				<button onClick={() => {
 					this.props.deleteList(this.props.list.id)

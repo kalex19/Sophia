@@ -45,7 +45,7 @@ export class ListContainer extends Component {
 			return (
 				<Link to={`/lists/${list.id}`} style={{textDecoration:'none'}}>
 					<div>
-						<h3 className="list-link">{list.title}</h3>
+						<h3 className="list-link">{list.title} ({items.length})</h3>
 					</div>
 				</Link>
 			);

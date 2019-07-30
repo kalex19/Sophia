@@ -1,4 +1,4 @@
-# BetterFlix
+# Sophia
 
 
 ## Table of Contents

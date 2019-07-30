@@ -4,7 +4,7 @@ export const listReducer = (state = [], action) => {
 		case 'ADD_ALL_LISTS':
 			return [ ...state, ...payload.lists ];
 		case 'ADD_LIST':
-			return [ ...state, ...payload.list ];
+			return [ ...state, payload.list ];
 		case 'UPDATE_LIST':
 			let list = state.find(list => list.id === payload.id);
 			list = {

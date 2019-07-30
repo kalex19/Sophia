@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { format } from 'url';
+import { connect } from 'react-redux';
+import * as actions from "../../actions";
 
 export class Form extends Component {
   constructor() {
@@ -38,7 +38,8 @@ createList = async () => {
       })
   })
   const data = await response.json();
-  await this.createItem(data.id)
+  await this.createItem(data.id);
+  this.props.addList(data);
 };
 
 createItem = async (id) => {
@@ -51,7 +52,7 @@ createItem = async (id) => {
       })
   })
   const data = await response.json();
-  console.log(data);
+  this.props.addItem(data);
 }
 
 handleChange = (e) => {
@@ -80,10 +81,11 @@ this.setState({
 
 const mapStateToProps = (state) => ({
   lists: state.lists
+});
+
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(actions.addItem(item)),
+  addList: list => dispatch(actions.addList(list)),
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form)
+export default connect(mapStateToProps,mapDispatchToProps)(Form)

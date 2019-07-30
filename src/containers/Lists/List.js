@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class List extends Component {
-  render() {
+export const List = (props) => {
+
+
     return (
-      <div>
-        <main className="list-body">
-          <button className="add-item-btn">Add Item</button>
-          <h2 className="list-title">{this.props.title}</h2>
-        </main>
-      </div>
+        <article className="list-body">
+          <h2 className="list-title">{props.title}</h2>
+          <ul className="item-task">
+            {props.items.map(item => {
+              return (<li>{item.task}</li>)
+            })}
+          </ul>
+        </article>
     )
-  }
-}
+  };
 
-export default List;
+  export default List;

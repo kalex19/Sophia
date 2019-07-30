@@ -4,7 +4,7 @@ export const itemReducer = (state = [], action) => {
     case 'ADD_ALL_ITEMS':
       return [...state, ...payload.items];
     case 'ADD_ITEM':
-      return [...state, ...payload.item];
+      return [...state, payload.item];
     case 'UPDATE_ITEM':
       let item = state.find(item => item.id === payload.id);
       item = {

@@ -28,6 +28,7 @@ handleSubmit = (e) => {
 }
 
 createList = async () => {
+  try{
   const response = await fetch('http://localhost:3002/api/v1/lists' ,{
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -38,19 +39,26 @@ createList = async () => {
   const data = await response.json();
   await this.createItem(data.id);
   this.props.addList(data);
+} catch(error){
+  console.log(error.message);
+}
 };
-
 createItem = async (id) => {
-  const response = await fetch('http://localhost:3002/api/v1/items',{
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      list_id: parseInt(id),
-      task: this.state.task,
+  try{ 
+
+    const response = await fetch('http://localhost:3002/api/v1/items',{
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        list_id: parseInt(id),
+        task: this.state.task,
       })
-  })
-  const data = await response.json();
-  this.props.addItem(data);
+    })
+    const data = await response.json();
+    this.props.addItem(data);
+  } catch(error){
+    console.log(error.message)
+  }
 }
 
 handleChange = (e) => {

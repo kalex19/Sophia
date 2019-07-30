@@ -1,6 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BetterFlix
+
+
+## Table of Contents
+* [Available Scripts](#Available-Scripts)
+* [Description](#Description)
+* [Project Successes](Project-Successes)
+* [Project Challenges](Project-Challenges)
+* [ Project Extensions/Issues](Project-Extensions/Issues)
+* [Project Tech Emphasis](Project-Tech-Emphasis)
+* [Project Management](Project-Management)
+* [Project Comps](Project-Comps)
+* [Developers](Developers)
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
@@ -17,52 +31,88 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Backend Server
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone down [this repo]('https://github.com/kalex19/Sophia-server'). Start the server by running 'npm start'. Open [http://localhost:3002](http://localhost:3002) to view it in the browser.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Test Coverage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Test Coverage](./src/images/test-coverage.png)
 
-### `npm run eject`
+## Description
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project is a to-do app for caregivers and seniors. An an MVP, the user is able to create a to-do list and add items to the to-do list or delete items or lists once completed. Once fully developed, the user will be able to create an acount, log in, create lists and items, complete lists and items, and star lists and items by increasing the importance of the list/item or by adding a due date to the list/item for when the to-do needs to be done.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Successes
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project required 1-2 api calls, however the modular code was build to run up to 20 different fetch calls to the moviedb to grab different sets of movie data. This increases the pleasure felt during the user experience as the user can select from a variety of movie genres. The developers implemented thunks for the first time and over half of the app has passing test coverage.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Challenges
 
-## Learn More
+Writing modular code required careful planning and strategic architecture. Creating a flat redux store also proved to be a challenge. Working through merge conflicts was tedious mostly due to text editor formatting differences. The app stlying was up to the developers whereas other projects have had a style comp, so extra effort went into creating a cleanly styled app. Lastly, keeping track of local state vs the store was a conceptual hurdle.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Extensions/Issues
 
-### Code Splitting
+* 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Project Tech Emphasis
 
-### Analyzing the Bundle Size
+* HTML
+* CSS
+* JavaScript
+* React
+* React Router
+* Redux
+* Jest
+* Enzyme
+* PropTypes
+* ES6 Classes
+* API fetches
+* Thunks Middleware
+* NPM
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Project Comps:
 
-### Making a Progressive Web App
+### Home Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+![Home Page](./src/assets/Home-Page.png)
 
-### Advanced Configuration
+### Create New List
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+![Create New List](./src/assets/Create-New-List.png)
 
-### Deployment
+### Select List
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+![Select List](./src/assets/Select-List.png)
 
-### `npm run build` fails to minify
+### Add Item
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Add Item](./src/assets/Add-Item.png)
+
+### List Card
+
+![List Card](./src/assets/List-Card.png)
+
+### Delete Item
+
+![Delete item](./src/assets/Delete-Item.png)
+
+### 404 Page
+
+![404 Page](./src/assets/404-Page.png)
+
+
+
+### GIFS
+
+![GIF](./src/images/betterflix-categories.gif)
+
+
+## Developer
+
+[Katherine Lewis](https://github.com/kalex19)
+
+## Licensing
+
+All credit goes to <a href="turing.io">Turing School of Software</a> for providing the project specifications.

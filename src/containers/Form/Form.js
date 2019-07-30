@@ -24,27 +24,29 @@ handleSubmit = (e) => {
   e.preventDefault();
   if(!parseInt(this.state.selectedList)){
     this.createList()
+  } else {
+    this.createItem(this.state.selectedList)
   }
-    this.createItem()
 }
 
 createList = async () => {
-  const response = fetch('http://localhost:3002/api/v1/lists' ,{
+  const response = await fetch('http://localhost:3002/api/v1/lists' ,{
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       title: this.state.title,
       })
   })
-  console.log(response)
-}
+  const data = await response.json();
+  await this.createItem(data.id)
+};
 
-createItem = async () => {
+createItem = async (id) => {
   const response = await fetch('http://localhost:3002/api/v1/items',{
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      list_id: parseInt(this.state.selectedList),
+      list_id: parseInt(id),
       task: this.state.task,
       })
   })

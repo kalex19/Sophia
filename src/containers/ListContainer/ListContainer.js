@@ -35,7 +35,7 @@ export class ListContainer extends Component {
     const lists = this.props.lists.map(list => {
       const items = this.props.items.filter(item => item.list_id == list.id)
       return (
-        <List {...list} items={items}/>
+        <List list={list} items={items}/>
       )
     })
     return (

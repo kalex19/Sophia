@@ -6,11 +6,10 @@
 * [Description](#Description)
 * [Project Successes](Project-Successes)
 * [Project Challenges](Project-Challenges)
-* [ Project Extensions/Issues](Project-Extensions/Issues)
+* [Project Extensions/Issues](Project-Extensions/Issues)
 * [Project Tech Emphasis](Project-Tech-Emphasis)
-* [Project Management](Project-Management)
 * [Project Comps](Project-Comps)
-* [Developers](Developers)
+* [Developer](Developer)
 
 ## Available Scripts
 
@@ -101,7 +100,6 @@ This project was developed over several days using genuine TDD.
 ### 404 Page
 
 ![404 Page](./src/assets/404-Page.png)
-
 
 
 ### Video

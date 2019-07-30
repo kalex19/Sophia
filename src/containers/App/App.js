@@ -5,14 +5,13 @@ import Error from '../../components/Error/Error';
 import Home from '../../components/Home/Home';
 import List from '../Lists/List'
 import { connect } from 'react-redux';
-import ListContainer from '../ListContainer/ListContainer';
+import PropTypes from 'prop-types';
 
 export const App = (props) => {
 	return (
 		<div>
       <Switch>
 			<Route exact path="/" component={Home} />
-			{/* <Route path="/lists" component={ListContainer}/> */}
 			<Route
 				path="/lists/:id"
 				render={({ match }) => {
@@ -34,3 +33,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(App);
+
+App.propTypes = {
+	lists: PropTypes.array,
+	items: PropTypes.array
+}

@@ -1,5 +1,5 @@
 .list-body {
-margin: 5%;
+margin: 5% 40%;
 background-color: white;
 width: 25%;
 min-height: 100px;
@@ -50,6 +50,12 @@ padding: 0 1%;
 .home-btn:hover {
 background-color: rgb(14, 107, 14);
 color: white;
+}
+
+.no-items-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  text-align: center;
 }
 
 

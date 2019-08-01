@@ -61,7 +61,7 @@ describe('createList', () => {
     expect(window.fetch).toHaveBeenCalledWith(mockUrl);
   });
   it('should throw an error if fetch fails', async () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+    window.fetch = jest.fn().mockImplementation(() => Promise.rejects({
       ok: false
     }))
     await expect(wrapper.instance().createList()).rejects.toEqual(Error("There is an error"));
@@ -91,12 +91,21 @@ describe('createItem', () => {
   });
 
   it('should throw an error if fetch fails', async () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       ok: false
     }))
     await expect(wrapper.instance().createItem()).rejects.toEqual(Error("There is an error"));
   });
 });
+
+describe('handleChange', () => {
+  it('should set state', () => {
+    wrapper.setState({target: {title: 'Grocery', task: 'Buy bread'}});
+    wrapper.instance().handleChange()
+    expect(wrapper.state('title')).toEqual('Grocery');
+    expect(wrapper.state('task')).toEqual('Buy Bread');
+  });
+})
 
 describe('MSTP', () => {
   it('should return an array of lists', () => {

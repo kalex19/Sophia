@@ -1,5 +1,5 @@
 import {mockItem} from '../../utils/mockData/mockData';
-import { deleteItem } from "../deleteItemThunk";
+import { deleteItemThunk } from "../deleteItemThunk";
 import { deleteItem, hasError } from '../../actions';
 
 
@@ -19,7 +19,7 @@ describe("deleteItem", () => {
           })
       })
     );
-    thunk = deleteItem(mockItem);
+    thunk = deleteItemThunk(mockItem);
   });
 
   it("should dispatch deleteItem with correct params", async () => {

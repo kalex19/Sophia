@@ -1,4 +1,4 @@
-import { updateItem } from '../updateItemThunk';
+import { updateItemThunk } from '../updateItemThunk';
 import { hasError, updateItem } from '../../actions';
 import {mockItem} from '../../utils/mockData/mockData';
 
@@ -18,7 +18,7 @@ describe('updateItem', () => {
         })
       });
     });
-    thunk = updateItem(mockUrl)
+    thunk = updateItemThunk(mockUrl)
   });
   
   it('should be called with the correct params', async () => {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import List from '../../containers/Lists/List';
 import { connect } from 'react-redux';
 import { getItems, getLists } from '../../utils/apicalls';
 import * as actions from '../../actions';

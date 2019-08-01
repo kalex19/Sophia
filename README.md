@@ -34,9 +34,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Clone down [this repo]('https://github.com/kalex19/Sophia-server'). Start the server by running 'npm start'. Open [http://localhost:3002](http://localhost:3002) to view it in the browser.
 
-## Test Coverage
-
-![Test Coverage](./src/images/test-coverage.png)
 
 ## Description
 

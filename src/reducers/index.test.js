@@ -14,43 +14,46 @@ describe('reducers', () => {
 			expect(result).toEqual(expected);
     });
     it('should handle ADD_ALL_ITEMS', () => {
-        const expected = mockItems;
-        const result = itemReducer(mockItems,{
-          type: "ADD_ALL_ITEMS",
+        const expected = mockItems;const action = {
+          type: 'ADD_ALL_ITEMS',
           payload: {
-            items:mockItems
+            items: mockItems
           }
-        });
+        }
+        const result = itemReducer([], action);
         expect(result).toEqual(expected);
     });
     it('should handle ADD_ITEM', () => {
       const expected = mockItem;
-      const result = itemReducer(mockItem,{
-        type: "ADD_ITEM",
+      const action = {
+        type: "ADD_LIST",
         payload: {
-          item:mockItem
+          list: mockList
         }
-      });
+      }
+      const result = itemReducer(mockItem, action);
       expect(result).toEqual(expected);
   });
     it('should handle UPDATE_ITEM', () => {
-      const expected = mockItem;
-        const result = itemReducer(mockItem,{
-          type: "UPDATE_ITEM",
-          payload: {
-            item: mockItem
-          }
-        });
+      const expected = mockItems;
+      const action = {
+        type: "UPDATE_ITEM",
+        payload: {
+          item: mockItem
+        }
+      }
+        const result = itemReducer(mockItems, action);
         expect(result).toEqual(expected);
     });
     it('should handle DELETE_ITEM', () => {
-      const expected = mockItem;
-        const result = itemReducer(mockItem,{
-          type: "DELETE_ITEM",
-          payload: {
-            id: 1
-          }
-        });
+      const expected = mockItems;
+      const action = {
+        type: "DELETE_ITEM",
+        payload: {
+          id: 1
+        }
+      }
+        const result = itemReducer(mockItems, action);
         expect(result).toEqual(expected);
     });
   });
@@ -62,42 +65,46 @@ describe('reducers', () => {
     });
     it('should handle ADD_ALL_LISTS', () => {
       const expected = mockLists;
-			const result = listReducer(mockLists, {
+      const action = {
         type: "ADD_ALL_LISTS",
         payload: {
-          lists:mockLists
+          lists: mockLists
         }
-      });
+      }
+			const result = listReducer([], action);
 			expect(result).toEqual(expected);
     });
     it('should handle ADD_LIST', () => {
       const expected = mockList;
-			const result = listReducer(mockList, {
+      const action = {
         type: "ADD_LIST",
         payload: {
-          list:mockList
+          list: mockList
         }
-      });
+      }
+			const result = listReducer(...mockLists, action);
 			expect(result).toEqual(expected);
     });
     it('should handle UPDATE_LIST', () => {
-      const expected = mockList;
-			const result = listReducer(mockList,{
+      const expected = mockLists;
+      const action = {
         type: "UPDATE_LIST",
         payload: {
-          list:mockList
+          list: mockList
         }
-      });
+      }
+			const result = listReducer(mockLists, action);
 			expect(result).toEqual(expected);
     });
     it('should handle DELETE_LIST', () => {
-      const expected = mockList;
-			const result = listReducer(mockList,{
+      const expected = mockLists;
+      const action = {
         type: "DELETE_LIST",
         payload: {
           id: 1
         }
-      });
+      }
+			const result = listReducer(mockLists, action);
 			expect(result).toEqual(expected);
     });
   });

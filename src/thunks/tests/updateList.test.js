@@ -1,4 +1,4 @@
-import { updateList } from '../updateItemThunk';
+import {updateListThunk} from '../updateListThunk';
 import { hasError, updateList } from '../../actions';
 import {mockList} from '../../utils/mockData/mockData';
 
@@ -9,6 +9,7 @@ describe('updateList', () => {
   beforeEach(() => {
     mockUrl = 'www.caregiver.com';
     mockDispatch = jest.fn();
+    thunk = updateListThunk(mockUrl)
 
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
@@ -18,7 +19,6 @@ describe('updateList', () => {
         })
       });
     });
-    thunk = updateList(mockUrl)
   });
   
   it('should be called with the correct params', async () => {

@@ -62,8 +62,9 @@ createItem = async (id) => {
 }
 
 handleChange = (e) => {
+  const {name, value} = e.target
 this.setState({
-  [e.target.name]: e.target.value
+  [name]: value
 })
 }
 

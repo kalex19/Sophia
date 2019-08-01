@@ -1,5 +1,5 @@
 import {mockList} from '../../utils/mockData/mockData';
-import { deleteList } from "../deleteListThunk";
+import { deleteListThunk } from "../deleteListThunk";
 import { deleteList, hasError } from '../../actions';
 
 
@@ -19,7 +19,7 @@ describe("deleteList", () => {
           })
       })
     );
-    thunk = deleteList(mockList);
+    thunk = deleteListThunk(mockList);
   });
 
   it("should dispatch deleteList with correct params", async () => {

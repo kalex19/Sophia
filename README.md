@@ -53,6 +53,7 @@ This project was developed over several days using genuine TDD. This process was
 
 ## Project Extensions/Issues
 
+* Only 77% test coverage
 * User can create an account/log in
 * User can share lists/items with other users
 * User can star important items
@@ -75,6 +76,10 @@ This project was developed over several days using genuine TDD. This process was
 * NPM
 
 ## Project Comps:
+
+## Test Coverage
+
+![Test Coverage](./src/assets/test-coverage.png)
 
 ### Home Page
 

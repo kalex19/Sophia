@@ -55,16 +55,18 @@ describe('createList', () => {
       })
     );
   });
-  it.skip('should call the fetch with the correct arguments', async () => {
+  it('should call the fetch with the correct arguments', async () => {
     const mockUrl = "http://localhost:3002/api/v1/lists"
     await wrapper.instance().createList();
     expect(window.fetch).toHaveBeenCalledWith(mockUrl);
   });
   it('should throw an error if fetch fails', async () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.rejects({
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       ok: false
     }))
     await expect(wrapper.instance().createList()).rejects.toEqual(Error("There is an error"));
+    //what is going on in function?
+    //what is expected
   });
 });
 
@@ -105,6 +107,9 @@ describe('handleChange', () => {
     expect(wrapper.state('title')).toEqual('Grocery');
     expect(wrapper.state('task')).toEqual('Buy Bread');
   });
+  //check initial state
+  //mock event with name and value passed through function
+  //check if state is updated to correct value  
 })
 
 describe('MSTP', () => {
